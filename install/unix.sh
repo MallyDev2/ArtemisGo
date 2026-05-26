@@ -15,20 +15,11 @@ if [ -z "$SETUP_KEY" ]; then
   exit 1
 fi
 
+SETUP_KEY="$(printf "%s" "$SETUP_KEY" | tr -d '[:space:]')"
+
 echo "ArtemisGo installer"
 echo "Fetching tunnel profile from $PANEL_URL"
 
-profile_script="$(python3 - "$PANEL_URL" "$SETUP_KEY" <<'PY'
-import sys
-import urllib.parse
-import urllib.request
-
-panel = sys.argv[1].rstrip("/")
-key = urllib.parse.quote(sys.argv[2].strip(), safe="")
-url = f"{panel}/install.sh?key={key}"
-with urllib.request.urlopen(url, timeout=30) as response:
-    sys.stdout.write(response.read().decode("utf-8"))
-PY
-)"
+profile_script="$(curl -fsSL "$PANEL_URL/install.sh?key=$SETUP_KEY")"
 
 bash -c "$profile_script"
