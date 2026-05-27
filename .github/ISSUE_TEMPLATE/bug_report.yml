@@ -1,0 +1,37 @@
+name: Bug report
+description: Report a problem with ArtemisGo setup or tunneling.
+title: "[Bug]: "
+labels:
+  - bug
+body:
+  - type: textarea
+    id: summary
+    attributes:
+      label: Summary
+      description: What went wrong?
+      placeholder: Describe the issue clearly.
+    validations:
+      required: true
+  - type: dropdown
+    id: platform
+    attributes:
+      label: Platform
+      options:
+        - Windows
+        - macOS
+        - Linux
+        - Other
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+      placeholder: List the steps that trigger the issue.
+    validations:
+      required: true
+  - type: textarea
+    id: details
+    attributes:
+      label: Extra details
+      description: Share logs only after removing setup keys, tokens, private IPs, and credentials.
