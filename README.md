@@ -47,6 +47,14 @@ ArtemisGo
 - A local service running on the port configured for the tunnel
 - OpenSSH available on the host machine
 
+## Platform Support
+
+| Platform | Shell | Command created |
+| --- | --- | --- |
+| Windows | PowerShell | `ArtemisGo` |
+| Linux | Bash | `ArtemisGo` |
+| macOS | Bash | `ArtemisGo` |
+
 ## Security
 
 Each tunnel uses its own setup key and connection credentials. Keep your setup command private and rotate the tunnel from the dashboard if the command is shared by mistake.
