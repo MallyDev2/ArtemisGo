@@ -10,6 +10,7 @@ $SetupKey = $env:ARTEMISGO_KEY
 if ([string]::IsNullOrWhiteSpace($SetupKey)) {
   $SetupKey = Read-Host "ArtemisGo setup key"
 }
+$SetupKey = $SetupKey.Trim()
 if ([string]::IsNullOrWhiteSpace($SetupKey)) {
   throw "A setup key is required."
 }
