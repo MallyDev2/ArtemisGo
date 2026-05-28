@@ -46,6 +46,7 @@ ArtemisGo
 - The setup key from your tunnel dashboard
 - A local service running on the port configured for the tunnel
 - OpenSSH available on the host machine
+- A terminal window that can stay open while the tunnel is active
 
 ## Platform Support
 
@@ -58,6 +59,3 @@ ArtemisGo
 ## Security
 
 Each tunnel uses its own setup key and connection credentials. Keep your setup command private and rotate the tunnel from the dashboard if the command is shared by mistake.
-
-
-Meow!
