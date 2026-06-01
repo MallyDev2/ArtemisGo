@@ -20,6 +20,17 @@ It pairs with the ArtemisGo dashboard to create a public address for a local ser
 4. Start your local game server or TCP service.
 5. Keep the ArtemisGo terminal open while hosting.
 
+## Connection Flow
+
+ArtemisGo keeps the public route on the proxy edge and only asks the origin machine to open an outbound tunnel. Players connect to the public address, the edge forwards the traffic, and the local server stays behind the home network.
+
+| Step | What happens |
+| --- | --- |
+| Create | The dashboard reserves a public route and setup key. |
+| Install | The origin machine stores the tunnel profile locally. |
+| Run | `ArtemisGo` starts the tunnel and checks the local service. |
+| Host | Players use the public route instead of the home IP. |
+
 ## Windows
 
 Run the PowerShell command shown in your tunnel dashboard.
